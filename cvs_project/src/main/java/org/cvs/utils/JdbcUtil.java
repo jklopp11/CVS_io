@@ -10,7 +10,9 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-
+/**
+ * 使用了Druid连接池
+ */
 public class JdbcUtil {
 	private static Properties p = new Properties();
 	private static DataSource ds;

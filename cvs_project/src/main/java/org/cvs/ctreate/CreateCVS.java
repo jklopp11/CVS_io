@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//create
+/**
+ *创建cvs文件
+ */
 public class CreateCVS {
 
 	public static String filepath = "f:/CvsProject/";// 文件名称

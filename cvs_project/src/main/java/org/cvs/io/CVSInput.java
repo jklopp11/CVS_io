@@ -11,6 +11,9 @@ import java.util.List;
 import org.cvs.ctreate.CreateCVS;
 import org.cvs.pojo.Student;
 
+/**
+ *读取cvs文件
+ */
 public class CVSInput {
 
 	public static List<Student> ReadIn() {

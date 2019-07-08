@@ -8,6 +8,9 @@ import java.util.List;
 import org.cvs.pojo.Student;
 import org.cvs.utils.JdbcUtil2;
 
+/**
+ *将数据写入数据库
+ */
 public class CVSOutput {
 	public static void writeOut(List<Student> stuList,int batchSize) {
 		String sql = "insert into student (name, age, profession,sclass,qq,wechat,phone,home,hobby) values (?,?,?,?,?,?,?,?,?)";

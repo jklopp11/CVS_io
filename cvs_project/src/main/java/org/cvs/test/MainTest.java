@@ -9,6 +9,9 @@ import org.cvs.pojo.Student;
 import org.cvs.utils.DeleteDataUtil;
 
 public class MainTest {
+	/**
+	 * 程序运行入口
+	 */
 	public static void main(String[] args) {
 		int arrayDataNum[] = {10036,100046,1000056};
 		for(int i = 0;i< arrayDataNum.length;i++) {

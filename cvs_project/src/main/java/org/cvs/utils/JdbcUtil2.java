@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+/**
+ *不使用连接池 
+ */
 public class JdbcUtil2 {
 	private static Properties p = new Properties();
 	private static Connection conn;
