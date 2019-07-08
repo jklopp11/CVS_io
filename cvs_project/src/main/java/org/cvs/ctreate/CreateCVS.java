@@ -55,7 +55,7 @@ public class CreateCVS {
 			int num = headList.size() / 2;
 			StringBuffer buffer = new StringBuffer();
 			for (int i = 0; i < num; i++) {
-				buffer.append(" ,");
+				buffer.append(",");
 			}
 			// 写入文件头部
 			writeRow(headList, csvWtriter);

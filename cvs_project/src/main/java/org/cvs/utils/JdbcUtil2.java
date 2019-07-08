@@ -17,13 +17,13 @@ public class JdbcUtil2 {
 	static {
 		try {
 			
-			//1.获取类加载器
+			//获取类加载器
 			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-			//2.读取配置文件返回输入流
+			//读取配置文件返回输入流
 			InputStream inputStream = classLoader.getResourceAsStream("db.properties");
-			
-			//3.使用p对象加载 输入流
+			//使用p对象加载 输入流
 			p.load(inputStream);
+			//加载驱动
 			Class.forName(p.getProperty("driverClassName"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -32,6 +32,7 @@ public class JdbcUtil2 {
 
 	public static Connection getConnection() {
 		try {
+			//获取数据库连接
 			conn = DriverManager.getConnection(p.getProperty("url"),p.getProperty("username"), p.getProperty("password"));
 			return conn;
 		} catch (Exception e) {
@@ -41,7 +42,7 @@ public class JdbcUtil2 {
 	}
 
 	public static void close(Connection conn, Statement ps, ResultSet rs) {
-		// 5.释放资源(先开后关原则)
+		//释放资源
 		try {
 			if (rs != null) {
 				rs.close();

@@ -41,7 +41,7 @@ public class MainTest {
 		//测试不同batchSize时将数据入库所用时间
 		int arrayBatchSize[] = {100,500,1000};
 		for(int i = 0;i < arrayBatchSize.length;i++) {
-			DeleteDataUtil.deleteData();
+//			DeleteDataUtil.deleteData();
 			long startWrite = System.currentTimeMillis();
 			CVSOutput.writeOut(stuList, arrayBatchSize[i]);
 			long finishWrite = System.currentTimeMillis();

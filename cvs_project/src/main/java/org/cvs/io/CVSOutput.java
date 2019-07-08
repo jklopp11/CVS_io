@@ -6,19 +6,19 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.cvs.pojo.Student;
-import org.cvs.utils.JdbcUtil;
+import org.cvs.utils.JdbcUtil2;
 
 /**
  *将数据写入数据库
  */
 public class CVSOutput {
 	public static void writeOut(List<Student> stuList,int batchSize) {
-		String sql = "insert into student (name, age, profession,sclass,qq,wechat,phone,home,hobby) values (?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into student (name,age,profession,sclass,qq,wechat,phone,home,hobby) values (?,?,?,?,?,?,?,?,?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         int count = 0;
         try{
-            conn = JdbcUtil.getConnection();
+            conn = JdbcUtil2.getConnection();
             pstmt = conn.prepareStatement(sql);
             for (Student student : stuList) {
             	 pstmt.setString(1,student.getName());
@@ -39,8 +39,9 @@ public class CVSOutput {
             pstmt.executeBatch(); //提交剩余的数据
         }catch (SQLException e){
             e.printStackTrace();
-        }finally {
-            JdbcUtil.close(conn, pstmt, null);
+        }
+            finally {
+            JdbcUtil2.close(conn, pstmt, null);
         }
 	}
 }
