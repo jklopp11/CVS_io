@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.cvs.pojo.Student;
-import org.cvs.utils.JdbcUtil2;
+import org.cvs.utils.JdbcUtil;
 
 /**
  *将数据写入数据库
@@ -18,7 +18,7 @@ public class CVSOutput {
         PreparedStatement pstmt = null;
         int count = 0;
         try{
-            conn = JdbcUtil2.getConnection();
+            conn = JdbcUtil.getConnection();
             pstmt = conn.prepareStatement(sql);
             for (Student student : stuList) {
             	 pstmt.setString(1,student.getName());
@@ -40,7 +40,7 @@ public class CVSOutput {
         }catch (SQLException e){
             e.printStackTrace();
         }finally {
-            JdbcUtil2.close(conn, pstmt, null);
+            JdbcUtil.close(conn, pstmt, null);
         }
 	}
 }

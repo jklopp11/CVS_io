@@ -10,13 +10,13 @@ public class DeleteDataUtil {
 			Connection conn = null;
 	        PreparedStatement pstmt = null;
 	        try{
-	            conn = JdbcUtil2.getConnection();
+	            conn = JdbcUtil.getConnection();
 	            pstmt = conn.prepareStatement(sql);
 	            pstmt.executeUpdate();
 	            }catch (Exception e) {
 	            	e.printStackTrace();
 				}finally {
-					JdbcUtil2.close(conn, pstmt, null);
+					JdbcUtil.close(conn, pstmt, null);
 				}
 		}
 }
