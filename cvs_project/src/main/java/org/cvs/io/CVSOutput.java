@@ -19,6 +19,7 @@ public class CVSOutput {
         int count = 0;
         try{
             conn = JdbcUtil2.getConnection();
+            conn.setAutoCommit(false);
             pstmt = conn.prepareStatement(sql);
             for (Student student : stuList) {
             	 pstmt.setString(1,student.getName());
@@ -37,6 +38,7 @@ public class CVSOutput {
                  }
 			}
             pstmt.executeBatch(); //提交剩余的数据
+            conn.commit();
         }catch (SQLException e){
             e.printStackTrace();
         }

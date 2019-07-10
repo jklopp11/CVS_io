@@ -8,8 +8,10 @@ public class DeleteDataUtil {
 		public static void deleteData() { 
 			String sql = "truncate table student;";
 			Connection conn = null;
+			
 	        PreparedStatement pstmt = null;
 	        try{
+
 	            conn = JdbcUtil2.getConnection();
 	            pstmt = conn.prepareStatement(sql);
 	            pstmt.executeUpdate();
